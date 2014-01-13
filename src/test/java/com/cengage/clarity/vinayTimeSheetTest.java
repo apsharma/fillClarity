@@ -25,7 +25,7 @@ public class vinayTimeSheetTest {
 
     @Test
     public void loginToTimeSheet() {
-        login.loginMethod("c-vthakur","password",driver);
+        login.loginMethod("c-vthakur","password");
     }
 
     @Test
