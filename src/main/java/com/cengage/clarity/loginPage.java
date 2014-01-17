@@ -1,11 +1,12 @@
 package com.cengage.clarity;
 
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
 import java.util.concurrent.TimeUnit;
 
-public class loginPage extends Driver {
+public class loginPage extends Driver{
 
     @FindBy(name = "userName")
     private WebElement username;
@@ -28,11 +29,13 @@ public class loginPage extends Driver {
     @FindBy(xpath = "//*[@id='portlet-timeadmin.timesheetBrowser']/table[2]/tbody/tr/td/table/tbody/tr[2]/td/form/table[4]/tbody/tr/td[1]/button[2]")
     private WebElement showAll_link;
 
+    private int AJAX_WAIT=10;
+
     public loginPage(WebDriver driver) {
         super(driver);
     }
 
-    public void loginMethod(String user, String pass) {
+    public void loginMethod(String user, String pass) throws InterruptedException {
         username.sendKeys(user);
         password.sendKeys(pass);
     }

@@ -16,7 +16,7 @@ public class takeScreenCapture {
         try{
             //Thread.sleep(10000)
             BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-            String path = "/Selenium/Output/screenshot_" + user + ".jpg";
+            String path = "target/image" + user + ".jpg";
             ImageIO.write(image, "jpg", new File(path));
             System.out.println("Screenshot taken..."+user);
         }
