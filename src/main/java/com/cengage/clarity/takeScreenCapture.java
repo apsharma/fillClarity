@@ -10,7 +10,14 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 
-public class takeScreenCapture {
+class takeScreenCapture extends Driver {
+
+    public takeScreenCapture (WebDriver driver) {
+        super(driver);
+    }
+
+    WebDriver d = this.driver;
+
     // This method take screens of page when called
     void takeScreenShot(String user){
         try{
@@ -26,7 +33,7 @@ public class takeScreenCapture {
     }
 
     // This method maximize the page size as default selenium window size is not appropriate for screen-shots
-    void maximizePage(WebDriver d){
+    void maximizePage(){
         final JavascriptExecutor js = (JavascriptExecutor) d;
         js.executeScript("window.open('','testwindow','width=400,height=200')");
         d.close();

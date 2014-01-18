@@ -35,6 +35,8 @@ public class loginPage extends Driver{
         super(driver);
     }
 
+    WebDriver d = this.driver;
+
     public void loginMethod(String user, String pass) throws InterruptedException {
         username.sendKeys(user);
         password.sendKeys(pass);
@@ -42,7 +44,7 @@ public class loginPage extends Driver{
 
     public void logout(WebDriver driver) {
         logout_btn.click();
-        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);     // Wait for 1 sec
+        d.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);     // Wait for 1 sec
     }
 
     public void openTimeSheet() {
